@@ -1,5 +1,6 @@
 import java.util.*;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class MyDate {
@@ -30,6 +31,12 @@ public class MyDate {
         this.month = Integer.parseInt(stringSplit[0]);
         this.day = Integer.parseInt(stringSplit[1]);
         this.year = Integer.parseInt(stringSplit[2]);
+    }
+
+    public MyDate(String day, String month, String year) {
+        this.day = Integer.parseInt(day);
+        this.month = Integer.parseInt(month);
+        this.year = Integer.parseInt(year);
     }
 
     // cau b
@@ -74,30 +81,27 @@ public class MyDate {
 
     // cau d
     static void print() {
-        LocalDate currentdate = LocalDate.now();
-        System.out.println("Current date: " + currentdate);
+        LocalDate myDateObj = LocalDate.now();
+        System.out.println("Current date: " + myDateObj);
     }
-}
 
-class DataTest {
-    public static void main(String args[]) {
+    static void formatDate(){
+        LocalDate myDateObj = LocalDate.now();
 
-        // MyDate obj = new MyDate();
-        // System.out.println("Day:"+obj.day);
-        // System.out.println("Month:"+obj.month);
-        // System.out.println("Year:"+obj.year);
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = myDateObj.format(myFormatObj);
+        System.out.println("After formatting: " + formattedDate);
 
-        // MyDate obj1 = new MyDate(04,03,2001);
-        // System.out.println("Day:"+obj1.day);
-        // System.out.println("Month:"+obj1.month);
-        // System.out.println("Year:"+obj1.year);
+        DateTimeFormatter myFormatObj1 = DateTimeFormatter.ofPattern("d/M/yyyy");
+        String formattedDate1 = myDateObj.format(myFormatObj1);
+        System.out.println("After formatting: " + formattedDate1);
 
-        //MyDate obj2 = new MyDate("03 04 2001");
-        // System.out.println("Day:"+obj2.day);
-        // System.out.println("Month:"+obj2.month);
-        // System.out.println("Year:"+obj2.year);
+        DateTimeFormatter myFormatObj2 = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+        String formattedDate2 = myDateObj.format(myFormatObj2);
+        System.out.println("After formatting: " + formattedDate2);
 
-        // MyDate.accept();
-        MyDate.print();
+        DateTimeFormatter myFormatObj3 = DateTimeFormatter.ofPattern("MMM d yyyy");
+        String formattedDate3 = myDateObj.format(myFormatObj3);
+        System.out.println("After formatting: " + formattedDate3);
     }
 }

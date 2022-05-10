@@ -1,5 +1,6 @@
 import javax.sound.sampled.SourceDataLine;
 
+
 public class Order {
     public static final int MAX_NUMBER_ORDERED = 10;
     public DigitalVideoDisc[] itemsOrdered = new DigitalVideoDisc[MAX_NUMBER_ORDERED];
@@ -73,7 +74,7 @@ public class Order {
         return total;
     }
 
-    public static final int MAX_LIMITED_ORDERS = 1;
+    public static final int MAX_LIMITED_ORDERS = 2;
     private static int nbOrders = 0;
 
     public Order() {
@@ -93,5 +94,10 @@ public class Order {
 
     public static int getNumOfInstances() {
         return nbOrders;
+    }
+
+    public DigitalVideoDisc getALuckyItem(){
+        int randomNum = (int)(Math.random() * (qtyOrdered));  // 0 to qtyOrdered-1
+        return itemsOrdered[randomNum];
     }
 }

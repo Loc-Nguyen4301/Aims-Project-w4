@@ -42,48 +42,8 @@ public class Aims {
 
         anOrder1.printListItemOfOrder();
 
-        if (Order.getNumOfInstances() < Order.MAX_LIMITED_ORDERS) {
-            Order anOrder2 = new Order();
+        anOrder1.removeDigitalVideoDisc(anOrder1.getALuckyItem());
+        anOrder1.printListItemOfOrder();
 
-            DigitalVideoDisc dvd6 = new DigitalVideoDisc("Anh Hung Xa Dieu");
-            dvd6.setCategory("Kiem Hiep");
-            dvd6.setDirector("Kim Dung");
-            dvd6.setCost(27.99f);
-            dvd6.setLength(89);
-            anOrder2.addDigitalVideoDisc(dvd6);
-
-            DigitalVideoDisc dvd7 = new DigitalVideoDisc("Than Dieu Dai Hiep");
-            dvd7.setCategory("Kiem Hiep");
-            dvd7.setDirector("Kim Dung");
-            dvd7.setCost(87.99f);
-            dvd7.setLength(89);
-            anOrder2.addDigitalVideoDisc(dvd7);
-
-            DigitalVideoDisc dvd8 = new DigitalVideoDisc("Bich Huyet Kiem");
-            dvd8.setCategory("Kiem Hiep");
-            dvd8.setDirector("Kim Dung");
-            dvd8.setCost(38.99f);
-            dvd8.setLength(89);
-            anOrder2.addDigitalVideoDisc(dvd8);
-
-            DigitalVideoDisc dvd9 = new DigitalVideoDisc("Thien Long Bat Bo");
-            dvd9.setCategory("Kiem Hiep");
-            dvd9.setDirector("Kim Dung");
-            dvd9.setCost(92.99f);
-            dvd9.setLength(89);
-            anOrder2.addDigitalVideoDisc(dvd9);
-
-            DigitalVideoDisc dvd10 = new DigitalVideoDisc("Xuan Thu-Chien Quoc");
-            dvd10.setCategory("Lich Su");
-            dvd10.setDirector("Phung Mong Long");
-            dvd10.setCost(110.10f);
-            dvd10.setLength(89);
-            anOrder2.addDigitalVideoDisc(dvd10);
-
-            anOrder2.printListItemOfOrder();
-        }
-        else{
-            System.out.println("Can't add order");
-        }
     }
 }
